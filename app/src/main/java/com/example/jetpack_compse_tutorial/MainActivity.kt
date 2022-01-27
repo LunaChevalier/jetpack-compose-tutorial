@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -54,11 +55,13 @@ fun Greeting(names: List<String>) {
 fun ToDoList(todos: List<ToDo>) {
     Column {
         for (todo in todos) {
-            Row(
-                Modifier.padding(10.dp)
-            ) {
-               Text(text = todo.day.format(DateTimeFormatter.BASIC_ISO_DATE))
-               Text(text = todo.title)
+            Card {
+                Row(
+                    Modifier.padding(10.dp)
+                ) {
+                    Text(text = todo.day.format(DateTimeFormatter.BASIC_ISO_DATE))
+                    Text(text = todo.title)
+                }
             }
         }
     }
